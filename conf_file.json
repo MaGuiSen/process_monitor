@@ -1,0 +1,31 @@
+{
+  "Linux":[
+    {
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/test/project1",
+      "command": "source ./cmd/linux/ccmdb.sh"
+    },
+    {
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/test/project2",
+      "command": "source ./cmd/linux/ccmdc.sh"
+    }
+  ],
+  "Windows":[
+    {
+      "exe": "python.exe",
+      "name": "python",
+      "cwd": "\\test\\project1",
+      "command": "START %cd%/cmd/window/ccmdb.bat"
+    },{
+      "exe": "python.exe",
+      "name": "python",
+      "cwd": "\\monitor\\service",
+      "command": "START %cd%/cmd/window/ccmdc.bat"
+    }
+  ]
+}
+
+
