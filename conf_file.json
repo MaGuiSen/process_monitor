@@ -4,26 +4,37 @@
       "exe": "python2.7",
       "name": "python",
       "cwd": "/test/project1",
-      "command": "source ./cmd/linux/ccmdb.sh"
+      "commands": [
+        "cd /home/gsma\n",
+        "echo $PYTHONPATH\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd ./test/project1\n",
+        "nohup python2.7 monitor.py> output 2>&1 &\n"
+      ]
     },
     {
       "exe": "python2.7",
       "name": "python",
       "cwd": "/test/project2",
-      "command": "source ./cmd/linux/ccmdc.sh"
+      "commands": [
+        "cd /home/gsma/test/\n",
+        "cd project2\n",
+        "nohup python2.7 monitor.py> output 2>&1 &\n"
+      ]
     }
   ],
   "Windows":[
     {
       "exe": "python.exe",
       "name": "python",
-      "cwd": "\\test\\project1",
-      "command": "START %cd%/cmd/window/ccmdb.bat"
+      "cwd": "\\test\\project2",
+      "commands": ["START %cd%/cmd/window/ccmdb.bat"]
     },{
       "exe": "python.exe",
       "name": "python",
       "cwd": "\\monitor\\service",
-      "command": "START %cd%/cmd/window/ccmdc.bat"
+      "commands": ["START %cd%/cmd/window/ccmdc.bat"]
     }
   ]
 }
