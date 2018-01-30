@@ -5,8 +5,7 @@ import platform
 import datetime
 import psutil
 import sys
-import urllib2
-
+import socket
 import requests
 
 reload(sys)
@@ -20,7 +19,7 @@ def save_log(log):
     else:
         time_str = datetime.datetime.now().strftime(u'%Y-%m-%d %H:%M:%S') + u'： '
     log = time_str + log
-    file_path = os.getcwd() + u'/log'
+    file_path = os.path.dirname(os.path.realpath(__file__)) + u'/log'
     if not os.path.isdir(file_path):
         os.mkdir(file_path)
     file_name_path = file_path + u'/info_collect_flow_log.txt'
@@ -79,6 +78,7 @@ def send_sys_info(sys_info_str):
     except Exception, e:
         save_log(str(e.message) + '\n')
 
+
 params = sys.argv
 if params and len(params) > 1:
     # 说明有参数
@@ -92,8 +92,6 @@ if params and len(params) > 1:
                 # 根据系统来
                 system_str = platform.system()
                 program_obj = json.load(loadF)
-                deploy_info = program_obj.get(u'deploy_info', {})
-                system_unique = deploy_info.get(u'system_unique', u'')
                 program_list = program_obj.get(system_str, [])
                 for index, program in enumerate(program_list):
                     save_log(u'%s========================================\n' % index)
@@ -132,13 +130,17 @@ if params and len(params) > 1:
                         u"cwd": cwd,
                         u"is_running": is_running
                     })
+                hostname = socket.gethostname()
+                ipList = socket.gethostbyname_ex(hostname)
+                if len(ipList) == 3:
+                    ipList = ipList[2]
                 system_info = {
-                    u"sys_unique": system_unique,
+                    u"hostname": hostname,
+                    u"ip": ipList,
                     u"sys_info": get_system_info(),
                     u"process_status": process_status
                 }
                 system_info_str = json.dumps(system_info)
-                print system_info_str
                 send_sys_info(system_info_str)
 
         else:

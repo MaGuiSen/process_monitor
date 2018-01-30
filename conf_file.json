@@ -1,8 +1,4 @@
 {
-  "deploy_info":{
-      "remark": "部署信息，system_unique填写部署机器的标识",
-      "system_unique": "hostname"
-  },
   "Linux":[
     {
       "info": "",

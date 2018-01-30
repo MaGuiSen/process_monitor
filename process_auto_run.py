@@ -17,7 +17,7 @@ def save_log(log, is_important=False):
     else:
         time_str = datetime.datetime.now().strftime(u'%Y-%m-%d %H:%M:%S') + u'： '
     log = time_str + log
-    file_path = os.getcwd() + u'/log'
+    file_path = os.path.dirname(os.path.realpath(__file__)) + u'/log'
     if not os.path.isdir(file_path):
         os.mkdir(file_path)
     if is_important:
