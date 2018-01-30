@@ -1,6 +1,11 @@
 {
+  "deploy_info":{
+      "remark": "部署信息，system_unique填写部署机器的标识",
+      "system_unique": "hostname"
+  },
   "Linux":[
     {
+      "info": "",
       "exe": "python2.7",
       "name": "python",
       "cwd": "/test/project1",
@@ -14,6 +19,7 @@
       ]
     },
     {
+      "info": "",
       "exe": "python2.7",
       "name": "python",
       "cwd": "/test/project2",
@@ -26,11 +32,13 @@
   ],
   "Windows":[
     {
+      "info": "",
       "exe": "python.exe",
       "name": "python",
       "cwd": "\\test\\project2",
       "commands": ["START %cd%/cmd/window/ccmdb.bat"]
     },{
+      "info": "",
       "exe": "python.exe",
       "name": "python",
       "cwd": "\\monitor\\service",
