@@ -1,0 +1,30 @@
+== mongo服务
+nohup /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/conf/mongodb.conf&
+
+== 最新的chatrob_q
+cd /opt/python_runtime/chatbot_prod/
+export PYTHONPATH=$PYTHONPATH:$PWD
+export PYTHONIOENCODING=utf-8
+cd api
+nohup python2.7 chatbot_engine.py &
+
+== chat_bot_app (App访问chatbot的接口)
+cd /opt/python_runtime/chat_bot_app/
+export PYTHONPATH=$PYTHONPATH:$PWD
+export PYTHONIOENCODING=utf-8
+cd api
+nohup python2.7 api_webhook.py &
+
+== chatbot_hys (好药师webhook)
+cd /opt/python_runtime/chatbot_hys/
+export PYTHONPATH=$PYTHONPATH:$PWD
+export PYTHONIOENCODING=utf-8
+cd api
+nohup python2.7 api_webhook_hys.py &
+
+== chatbot_nj (南京银行 webhook)
+cd /opt/python_runtime/chatbot_nj/
+export PYTHONPATH=$PYTHONPATH:$PWD
+export PYTHONIOENCODING=utf-8
+cd api
+nohup python2.7 api_webhook_nj.py &

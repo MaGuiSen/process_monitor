@@ -1,28 +1,64 @@
 {
   "Linux":[
     {
-      "info": "",
+      "info": "mongo服务",
       "exe": "python2.7",
       "name": "python",
       "cwd": "/test/project1",
       "commands": [
-        "cd /home/gsma\n",
-        "echo $PYTHONPATH\n",
-        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
-        "export PYTHONIOENCODING=utf-8\n",
-        "cd ./test/project1\n",
-        "nohup python2.7 monitor.py> output 2>&1 &\n"
+        "nohup /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/conf/mongodb.conf&\n"
       ]
     },
     {
-      "info": "",
+      "info": "最新的chatrob_q",
       "exe": "python2.7",
       "name": "python",
-      "cwd": "/test/project2",
+      "cwd": "/python_runtime/chatbot_prod",
       "commands": [
-        "cd /home/gsma/test/\n",
-        "cd project2\n",
-        "nohup python2.7 monitor.py> output 2>&1 &\n"
+        "cd /opt/python_runtime/chatbot_prod/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 chatbot_engine.py&\n"
+      ]
+    },
+    {
+      "info": "chat_bot_app(App访问chatbot的接口)",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chat_bot_app",
+      "commands": [
+        "cd /opt/python_runtime/chat_bot_app/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 api_webhook.py&\n"
+      ]
+    },
+    {
+      "info": "chatbot_hys(好药师webhook)",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chatbot_hys",
+      "commands": [
+        "cd /opt/python_runtime/chatbot_hys/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 api_webhook_hys.py&\n"
+      ]
+    },
+    {
+      "info": "chatbot_nj(南京银行 webhook)",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chatbot_nj",
+      "commands": [
+        "cd /opt/python_runtime/chatbot_nj/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 chatbot_nj.py&\n"
       ]
     }
   ],
