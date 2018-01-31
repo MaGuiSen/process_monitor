@@ -1,12 +1,34 @@
 {
   "Linux":[
     {
+      "info": "mongo服务",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/test/project1",
+      "commands": [
+        "nohup /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/conf/mongodb.conf&\n"
+      ]
+    },
+    {
+      "info": "最新的chatrob_q",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chatbot_prod",
+      "commands": [
+        "cd /opt/python_runtime/chatbot_prod/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 chatbot_engine.py&\n"
+      ]
+    },
+    {
       "info": "chat_bot_app(App访问chatbot的接口)",
       "exe": "python2.7",
       "name": "python",
       "cwd": "/python_runtime/chat_bot_app",
       "commands": [
-        "cd /home/gsma/python_runtime/chat_bot_app/\n",
+        "cd /opt/python_runtime/chat_bot_app/\n",
         "export PYTHONPATH=$PYTHONPATH:$PWD\n",
         "export PYTHONIOENCODING=utf-8\n",
         "cd api\n",
@@ -19,7 +41,7 @@
       "name": "python",
       "cwd": "/python_runtime/chatbot_hys",
       "commands": [
-        "cd /home/gsma/python_runtime/chatbot_hys/\n",
+        "cd /opt/python_runtime/chatbot_hys/\n",
         "export PYTHONPATH=$PYTHONPATH:$PWD\n",
         "export PYTHONIOENCODING=utf-8\n",
         "cd api\n",
@@ -32,7 +54,7 @@
       "name": "python",
       "cwd": "/python_runtime/chatbot_nj",
       "commands": [
-        "cd /home/gsma/python_runtime/chatbot_nj/\n",
+        "cd /opt/python_runtime/chatbot_nj/\n",
         "export PYTHONPATH=$PYTHONPATH:$PWD\n",
         "export PYTHONIOENCODING=utf-8\n",
         "cd api\n",

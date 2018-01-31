@@ -41,6 +41,7 @@ if params and len(params) > 1:
     # 说明有参数
     conf_path = params[1]
     loadF = None
+    save_log(u'conf_path: %s\n' % conf_path)
     try:
         if os.path.exists(conf_path):
             # 不存在，则需要下载
