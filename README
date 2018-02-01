@@ -1,0 +1,3 @@
+1、定时器配置
+*/1 * * * * source /home/gsma/monitor/process_auto_run.sh >> /home/gsma/monitor/log/crontab_auto_run_log.txt 2>&1
+*/1 * * * * source /home/gsma/monitor/system_info_collect.sh >> /home/gsma/monitor/log/crontab_system_info_log.txt 2>&1
