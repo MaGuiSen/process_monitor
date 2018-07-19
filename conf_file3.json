@@ -1,0 +1,60 @@
+{
+  "Linux":[
+    {
+      "info": "chat_bot_app(App访问chatbot的接口)",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chat_bot_app",
+      "commands": [
+        "cd /home/gsma/python_runtime/chat_bot_app/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 api_webhook.py&\n"
+      ]
+    },
+    {
+      "info": "chatbot_hys(好药师webhook)",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chatbot_hys",
+      "commands": [
+        "cd /home/gsma/python_runtime/chatbot_hys/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 api_webhook_hys.py&\n"
+      ]
+    },
+    {
+      "info": "chatbot_nj(南京银行 webhook)",
+      "exe": "python2.7",
+      "name": "python",
+      "cwd": "/python_runtime/chatbot_nj",
+      "commands": [
+        "cd /home/gsma/python_runtime/chatbot_nj/\n",
+        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
+        "export PYTHONIOENCODING=utf-8\n",
+        "cd api\n",
+        "nohup python2.7 api_webhook_nj.py&\n"
+      ]
+    }
+  ],
+  "Windows":[
+    {
+      "info": "",
+      "exe": "python.exe",
+      "name": "python",
+      "cwd": "\\test\\project2",
+      "commands": ["START %cd%/cmd/window/ccmdb.bat"]
+    },{
+      "info": "",
+      "exe": "python.exe",
+      "name": "python",
+      "cwd": "\\monitor\\service",
+      "commands": ["START %cd%/cmd/window/ccmdc.bat"]
+    }
+  ]
+}
+
+

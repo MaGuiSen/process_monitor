@@ -1,58 +1,50 @@
 {
+  "Crontab": "*/1 * * * * python /home/process_monitor/process_auto_run.py /home/process_monitor/conf_file.json >> /home/process_monitor/log/crontab_auto_run_log.txt 2>&1",
   "Linux":[
     {
-      "info": "chat_bot_app(App访问chatbot的接口)",
-      "exe": "python2.7",
-      "name": "python",
-      "cwd": "/python_runtime/chat_bot_app",
+      "info": "advisorq-fof",
+      "name": "advisorq-fof",
+      "exe": "/home/html/fofsvr/advisorq-fof",
+      "cwd": "/home/html/fofsvr",
       "commands": [
-        "cd /home/gsma/python_runtime/chat_bot_app/\n",
-        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
-        "export PYTHONIOENCODING=utf-8\n",
-        "cd api\n",
-        "nohup python2.7 api_webhook.py&\n"
+        "cd /home/html/fofsvr/ && nohup ./advisorq-fof all >nohup.out 2>&1 &\n"
       ]
     },
     {
-      "info": "chatbot_hys(好药师webhook)",
-      "exe": "python2.7",
-      "name": "python",
-      "cwd": "/python_runtime/chatbot_hys",
+      "info": "auth-server",
+      "name": "auth-server",
+      "exe": "/home/html/authsvr/auth-server",
+      "cwd": "/home/html/authsvr",
       "commands": [
-        "cd /home/gsma/python_runtime/chatbot_hys/\n",
-        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
-        "export PYTHONIOENCODING=utf-8\n",
-        "cd api\n",
-        "nohup python2.7 api_webhook_hys.py&\n"
+        "cd /home/html/authsvr/ && nohup ./auth-server >>nohup.out 2>&1 &\n"
       ]
     },
     {
-      "info": "chatbot_nj(南京银行 webhook)",
-      "exe": "python2.7",
-      "name": "python",
-      "cwd": "/python_runtime/chatbot_nj",
+      "info": "advisorq-api-v2",
+      "name": "advisorq-api-v2",
+      "exe": "/home/html/advisorq-dev/advisorq-api-v2",
+      "cwd": "/home/html/advisorq-dev",
       "commands": [
-        "cd /home/gsma/python_runtime/chatbot_nj/\n",
-        "export PYTHONPATH=$PYTHONPATH:$PWD\n",
-        "export PYTHONIOENCODING=utf-8\n",
-        "cd api\n",
-        "nohup python2.7 api_webhook_nj.py&\n"
+        "cd /home/html/advisorq-dev/ && nohup ./advisorq-api-v2 all >>nohup.out 2>&1 &\n"
       ]
-    }
-  ],
-  "Windows":[
+    },
     {
-      "info": "",
-      "exe": "python.exe",
-      "name": "python",
-      "cwd": "\\test\\project2",
-      "commands": ["START %cd%/cmd/window/ccmdb.bat"]
-    },{
-      "info": "",
-      "exe": "python.exe",
-      "name": "python",
-      "cwd": "\\monitor\\service",
-      "commands": ["START %cd%/cmd/window/ccmdc.bat"]
+      "info": "advisorq-api",
+      "name": "advisorq-api",
+      "exe": "/home/html/advisorq/advisorq-api",
+      "cwd": "/home/html/advisorq",
+      "commands": [
+        "cd /home/html/advisorq && nohup ./advisorq-api >>nohup.out 2>&1 &\n"
+      ]
+    },
+    {
+      "info": "fund_statistics",
+      "name": "fund_statistics",
+      "exe": "/home/html/advisorq-dev/fund_statistics",
+      "cwd": "/home/html/advisorq-dev",
+      "commands": [
+        "cd /home/html/advisorq-dev/ && nohup ./fund_statistics >> fund_statistics.out 2>&1 &\n"
+      ]
     }
   ]
 }

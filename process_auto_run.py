@@ -73,7 +73,9 @@ if params and len(params) > 1:
                         p_exe = p.get(u'exe', '')
                         # if u"python" in p_name:
                         #     print p_name, p_cwd, p_exe
-                        if name in p_name and exe in p_exe and cwd in p_cwd:
+                        # 更改为全等
+                        # if name in p_name and exe in p_exe and cwd in p_cwd:
+                        if name == p_name and exe == p_exe and cwd == p_cwd:
                             # 说明就是这个线程在运行
                             is_running = True
                     if not is_running:
