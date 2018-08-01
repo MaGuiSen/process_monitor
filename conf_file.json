@@ -2,6 +2,15 @@
   "Crontab": "*/1 * * * * python /home/process_monitor/process_auto_run.py /home/process_monitor/conf_file.json >> /home/process_monitor/log/crontab_auto_run_log.txt 2>&1",
   "Linux":[
     {
+      "info": "pattern-api",
+      "name": "pattern-api",
+      "exe": "/home/html/pattern/pattern-api",
+      "cwd": "/home/html/pattern",
+      "commands": [
+        "cd /home/html/pattern/ && nohup ./pattern-api all >nohup.out 2>&1 &\n"
+      ]
+    },
+    {
       "info": "advisorq-fof",
       "name": "advisorq-fof",
       "exe": "/home/html/fofsvr/advisorq-fof",

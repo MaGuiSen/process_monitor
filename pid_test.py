@@ -19,8 +19,8 @@ for pid in pids:
         cwd = p["cwd"] or ''
         if keyword not in name and keyword not in exe and keyword not in cwd:
             continue
-        print 'name: ', name
-        print 'exe: ', exe
-        print 'cwd: ', cwd
-    except Exception, e:
+        print ('name: ', name)
+        print ('exe: ', exe)
+        print ('cwd: ', cwd)
+    except:
         continue
