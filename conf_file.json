@@ -2,6 +2,33 @@
   "Crontab": "*/1 * * * * python /home/process_monitor/process_auto_run.py /home/process_monitor/conf_file.json >> /home/process_monitor/log/crontab_auto_run_log.txt 2>&1",
   "Linux":[
     {
+      "info": "sms-std-api",
+      "name": "sms-std-api",
+      "exe": "/home/html/sms/sms-std-api",
+      "cwd": "/home/html/sms",
+      "commands": [
+        "cd /home/html/sms && nohup ./sms-std-api all sms-api.out 2>&1 &\n"
+      ]
+    },
+    {
+      "info": "FutuOpenD",
+      "name": "FutuOpenD",
+      "exe": "/opt/futu/FutuOpenD_1.01_Centos7/FutuOpenD",
+      "cwd": "/opt/futu/FutuOpenD_1.01_Centos7",
+      "commands": [
+        "cd /opt/futu/FutuOpenD_1.01_Centos7 && nohup ./FutuOpenD > opend.out 2>&1 &\n"
+      ]
+    },
+    {
+      "info": "FutuHistData",
+      "name": "FutuHistData",
+      "exe": "/opt/futu/FutuOpenD_1.01_Centos7/FutuHistData",
+      "cwd": "/opt/futu/FutuOpenD_1.01_Centos7",
+      "commands": [
+        "cd /opt/futu/FutuOpenD_1.01_Centos7 && nohup ./FutuHistData > hisdata.out 2>&1 &\n"
+      ]
+    },
+    {
       "info": "pattern-api",
       "name": "pattern-api",
       "exe": "/home/html/pattern/pattern-api",
